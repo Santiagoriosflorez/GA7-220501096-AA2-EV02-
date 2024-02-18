@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymelea.org">
+    <head>
+        <title>Pagina de inicio</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+        <style>
+        /* Estilos para la tabla */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            background-color: #f1f1f1;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+            font-weight: bold;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        /* Estilos para el enlace */
+        a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos para el mensaje */
+        .empty-message {
+            font-style: italic;
+            color: #999;
+        }
+    </style>
+    <body>
+        <h1>Inicio</h1>
+        <div th:if="${individuos != null and !individuos.empty}">
+            <table border="3">
+            <tr>
+                <th>Usuario</th>
+                <th>Correo</th>
+                <th>Contraseña</th>
+                <th>Actualizar</th>
+                <th>Nuevo Usuario</th>
+                <th>Borrar Usuario</th>
+            </tr>
+                <tr th:each="individuo : ${individuos}">
+                    <td th:text="${individuo.usuario}"> Muestra usuario </td>
+                    <td th:text="${individuo.correo}"> Muestra correo</td>
+                    <td th:text="${individuo.contrasena}"> Muestra contrasena </td>
+                    <td> <a th:href="@{/editar/} + ${individuo.id_individuo}" th:text="Actualizar"/></td>
+                    <td><a th:href="@{/anexar}">Nuevo Usuario</a></td>
+                   <td><a th:href="@{'/borrar/' + ${individuo.id_individuo}}">Borrar</a></td>
+                </tr>>
+            </table>
+        </div>
+        <div th:if="${individuos == null or individuos.empty}">
+            la lista no tiene informacion 
+        </div>
+    </body>
+</html>

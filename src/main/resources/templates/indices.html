@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymelea.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Formulario</title>
+        <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+
+    }
+    h1 {
+        text-align: center;
+        font-family: Georgia serif;
+    }
+    .form-group {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color:  #7E7575;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      font-family: Palatino;
+      font-size: 25px;
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px 0px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    
+    
+  </style>
+    </head>
+    <body>
+        <h1> Formulario de Registro</h1>
+        <div class="form-group">
+        <form action="SvUsuarios" method="Post">
+            <label>nombre usuario:</label> 
+            <input type="text" name="Nombre"  required><br>
+            <label>correo electronico:</label > 
+            <input type="text" name="email" required=""><br>
+            <label>contrasena:</label> 
+            <input type="text" name="contrasena" required><br>
+            <button type="submit">Enviar</button>
+        </form>
+        </div>
+    </body>
+    
+</html>
+

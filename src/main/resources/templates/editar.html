@@ -1,0 +1,71 @@
+<!DOCTYPE htl>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmins:th="http://www.thymleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    
+    <head>
+        <title>Datos del nuevo Individuo</title>
+        <meta charset="UTF-8" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        form{
+            display: grid;
+            justify-content: center;
+            position:relative;
+            font-family: "IBM Plex Serif", serif;
+            left:44%;
+            width:20%;
+            height:480px;
+            margin:10px;
+            background-color: #00A2FF;
+            margin:6px 40px;
+           
+        }
+        label{
+            margin:5px -40px;
+            font-size:25px;
+            margin-bottom:-10px;
+        }
+            
+        input{
+            position:relative;
+            right:50px;
+            width:150%;
+            padding:10px;
+            margin:6px 0;
+            border-radius:10px;
+        }
+        
+        button{
+            background-color:#D6F4FF;
+            font-size:20px;
+            height:40px;
+            position:relative;
+            top:-10px;
+        }
+    </style>
+    <body>
+        <h1>Actualizar Usuario</h1>
+        <a th:href="@{ / }"> Devolver </a>
+        <br/>
+        <form th:action="@{/salvar}" method="post" th:object="${individuo}" class="form">
+            <!-- <input type="hidden" name ="id_individuo" th:field="{id_individuo}"-->
+            <label for="nombre">usuario: </label>
+            <input type="text" name="usuario" th:field="*{usuario}"/>
+            </br>
+            <label for="correo">correo: </label>
+            <input type="text" name="correo" th:field="*{correo}"/>
+            </br>
+             <label for="contraseña">contraseña </label>
+            <input type="text" name="contrasena" th:field="*{contrasena}"/>
+            <br/>
+            <button type="submit" name="salvar" value="Salvar">Guardar</button>
+        </form>
+    </body>
+</html>

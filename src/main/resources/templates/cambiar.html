@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmins:th="http://www.thymleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Datos del nuevo Individuo</title>
+        <meta charset="UTF-8" />
+    </head>
+    <style>
+        
+        h1{
+            text-align:center;
+        }
+        form{
+            display: grid;
+            justify-content: center;
+            position:relative;
+            left:39%;
+            width:20%;
+            height:480px;
+            margin:10px;
+            background-color: #00A4FF;
+            margin:6px 40px;
+           
+        }
+        label{
+            margin:5px -40px;
+            font-size:25px;
+            margin-bottom:-10px;
+        }
+            
+        input{
+            position:relative;
+            right:50px;
+            width:150%;
+            padding:10px;
+            margin:6px 0;
+            border-radius:10px;
+        }
+        
+        button{
+            background-color:#D6F4FF;
+            font-size:20px;
+            height:40px;
+            position:relative;
+            top:-10px;
+        }
+    </style>
+    <body>
+        <h1>Datos del nuevo Individuo </h1>
+        <a th:href="@{ / }"> Devolver </a>
+        <br/>
+        <form th:action="@{/salvar}" method="post" th:object="${individuo}">
+            <!-- <input type="hidden" name ="id_individuo" th:field="{id_individuo}"-->
+             <label for="nombre">usuario: </label>
+            <input type="text" name="usuario" th:field="*{usuario}"/>
+            </br>
+            <label for="correo">correo: </label>
+            <input type="text" name="correo" th:field="*{correo}"/>
+            </br>
+             <label for="contraseña">contraseña </label>
+            <input type="text" name="contrasena" th:field="*{contrasena}"/>
+            <br/>
+            <input type="submit" name="salvar" value="Guardar"/>
+        </form>
+    </body>
+</html>
